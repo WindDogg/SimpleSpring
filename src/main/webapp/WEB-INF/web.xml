@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/j2ee" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+ version="2.4">
+    <display-name>XHJ Web Application</display-name>
+    
+    <servlet>
+        <servlet-name>xhjmvc</servlet-name>
+        <servlet-class>com.xue.mvcframework.servlet.XHJDispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>application.properties</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>xhjmvc</servlet-name>
+        <!-- 用一个Servlet拦截所有请求 -->
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
