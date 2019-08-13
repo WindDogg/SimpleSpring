@@ -4,10 +4,7 @@ import com.xue.mvcframework.annotation.XHJAutowired;
 import com.xue.mvcframework.annotation.XHJService;
 
 @XHJService
-public class DemoService implements IDemoService {
-
-    @XHJAutowired
-    IDemoService demoService;
+public class DemoService {
 
     public String get(String name) {
         return name;

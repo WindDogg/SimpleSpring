@@ -15,13 +15,12 @@ import java.io.IOException;
 @XHJRequestMapping("/demo")
 public class DemoAction {
 
-    @XHJAutowired
     private DemoService demoService;
 
     @XHJRequestMapping("/query")
     public void query(HttpServletRequest request, HttpServletResponse response, @XHJRequestParam("name") String name){
 
-        String result = name;
+        String result = "my name is "+name;
         try {
             response.getWriter().write(result);
         } catch (IOException e) {

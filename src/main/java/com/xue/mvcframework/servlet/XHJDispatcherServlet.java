@@ -137,7 +137,10 @@ public class XHJDispatcherServlet extends HttpServlet {
                     }
                     //如果没有设置，就按接口类型创建一个实例
                     Class<?>[] interfaces = clazz.getInterfaces();
-                    ioc.put(interfaces[0].getName(),clazz.newInstance());
+                    for (Class<?> cl: interfaces
+                         ) {
+                        ioc.put(cl.getName(),clazz.newInstance());
+                    }
                 }else{
                     continue;
                 }
